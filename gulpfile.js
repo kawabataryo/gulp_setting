@@ -27,16 +27,6 @@ gulp.task('sass:watch', function(){
 	gulp.watch(paths.webroot + 'inc/scss/**/*.scss', ['sass']);
 });
 
-//TypeScript
-gulp.task('typescript', function(){
-	gulp_typescript();
-});
-
-gulp.task('typescript:watch', function(){
-	gulp_typescript();
-	gulp.watch(paths.webroot + 'inc/ts/**/*.ts', ['typescript']);
-});
-
 //babel
 gulp.task('babel', function(){
 	gulp_babel();
@@ -63,10 +53,8 @@ gulp.task('BowerJS', function(){
 //default
 gulp.task('default', function(){
 	gulp_sass();
-	gulp_typescript();
 	gulp_babel();
 	gulp.watch(paths.webroot + 'inc/scss/**/*.scss', ['sass']);
-	gulp.watch(paths.webroot + 'inc/ts/**/*.ts', ['typescript']);
 	gulp.watch(paths.webroot + 'inc/es6/**/*.js', ['babel']);
 });
 
